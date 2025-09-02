@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float amount, converted;
+
+    // Exchange rates (You can update them)
+    float usd_to_inr = 83.50;
+    float eur_to_inr = 91.20;
+
+    printf("===== Currency Converter =====\n");
+    printf("1. INR to USD\n");
+    printf("2. USD to INR\n");
+    printf("3. INR to EUR\n");
+    printf("4. EUR to INR\n");
+    printf("5. USD to EUR\n");
+    printf("6. EUR to USD\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    printf("Enter amount: ");
+    scanf("%f", &amount);
+
+    switch(choice) {
+        case 1:
+            converted = amount / usd_to_inr;
+            printf("%.2f INR = %.2f USD\n", amount, converted);
+            break;
+        case 2:
+            converted = amount * usd_to_inr;
+            printf("%.2f USD = %.2f INR\n", amount, converted);
+            break;
+        case 3:
+            converted = amount / eur_to_inr;
+            printf("%.2f INR = %.2f EUR\n", amount, converted);
+            break;
+        case 4:
+            converted = amount * eur_to_inr;
+            printf("%.2f EUR = %.2f INR\n", amount, converted);
+            break;
+        case 5:
+            converted = (amount * usd_to_inr) / eur_to_inr;
+            printf("%.2f USD = %.2f EUR\n", amount, converted);
+            break;
+        case 6:
+            converted = (amount * eur_to_inr) / usd_to_inr;
+            printf("%.2f EUR = %.2f USD\n", amount, converted);
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+
+    return 0;
+}

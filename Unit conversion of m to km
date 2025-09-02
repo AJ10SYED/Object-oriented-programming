@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    float value;
+    char unit;
+
+    printf("Enter distance (e.g., 10 K or 6 M): ");
+    scanf("%f %c", &value, &unit);
+
+    if (unit == 'K' || unit == 'k')
+        printf("%.2f km = %.2f miles\n", value, value * 0.621371);
+    else if (unit == 'M' || unit == 'm')
+        printf("%.2f miles = %.2f km\n", value, value / 0.621371);
+    else
+        printf("Invalid unit!\n");
+
+    return 0;
+}

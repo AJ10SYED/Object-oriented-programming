@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+#define DAYS 30   // you can change this for 31 or 28
+
+struct BloodPressure {
+    int systolic;
+    int diastolic;
+};
+
+int main() {
+    struct BloodPressure bp[DAYS];
+    int i;
+
+    printf("Enter Blood Pressure Records for %d Days:\n", DAYS);
+    for (i = 0; i < DAYS; i++) {
+        printf("Day %d:\n", i + 1);
+        printf("  Systolic: ");
+        scanf("%d", &bp[i].systolic);
+        printf("  Diastolic: ");
+        scanf("%d", &bp[i].diastolic);
+    }
+
+    printf("\nMonthly Blood Pressure Record:\n");
+    printf("---------------------------------\n");
+    printf("Day\tSystolic\tDiastolic\n");
+    for (i = 0; i < DAYS; i++) {
+        printf("%2d\t%8d\t%9d\n", i + 1, bp[i].systolic, bp[i].diastolic);
+    }
+
+    return 0;
+}

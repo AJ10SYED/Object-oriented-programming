@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    float u, v, a, t, s;
+
+    printf("Enter initial velocity (u): ");
+    scanf("%f", &u);
+
+    printf("Enter acceleration (a): ");
+    scanf("%f", &a);
+
+    printf("Enter time (t): ");
+    scanf("%f", &t);
+
+    // Equation 1: v = u + at
+    v = u + a * t;
+
+    // Equation 2: s = ut + 0.5 * a * t^2
+    s = (u * t) + (0.5 * a * t * t);
+
+    // Equation 3: v^2 = u^2 + 2as (already got v, but just to verify)
+    float v_check = (u * u) + (2 * a * s);
+
+    printf("\nResults:\n");
+    printf("Final velocity (v) = %.2f\n", v);
+    printf("Displacement (s) = %.2f\n", s);
+    printf("Check using v^2 = u^2 + 2as → v^2 = %.2f\n", v_check);
+
+    return 0;
+}
